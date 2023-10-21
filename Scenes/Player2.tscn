@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0chamgprg64i"]
+
+[ext_resource type="Script" path="res://Scripts/Player1.gd" id="1_khi8i"]
+[ext_resource type="Material" uid="uid://c6q2iaal2w0p8" path="res://Materials/Player2.material" id="2_xajtq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_khay5"]
+size = Vector3(1, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_00lhp"]
+size = Vector3(1, 1, 5)
+
+[node name="Player1" type="CharacterBody3D"]
+collision_mask = 7
+script = ExtResource("1_khi8i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_khay5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_xajtq")
+mesh = SubResource("BoxMesh_00lhp")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 2.0
+omni_range = 50.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 2.0
+omni_range = 50.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 2.0
+omni_range = 50.0

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://betfrcm382iwq"]
+
+[ext_resource type="Material" uid="uid://ggexljwy84mh" path="res://Materials/Ball.material" id="1_cbgod"]
+[ext_resource type="Script" path="res://Scenes/Ball.gd" id="1_dhwmw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2icol"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hreil"]
+
+[node name="Ball" type="RigidBody3D"]
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_dhwmw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2icol")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_cbgod")
+mesh = SubResource("BoxMesh_hreil")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.392157, 1, 1, 1)
+light_energy = 4.0
+omni_range = 50.0
