@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 func _physics_process(delta):
 	if GameScene.gameState:
+		GameScene.player1Position = position
 		var direction = Vector3.ZERO
 		if Input.is_action_pressed("player1_move_up"):
 			direction.z -= 1

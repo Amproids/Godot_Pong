@@ -3,6 +3,8 @@ var gameState
 var player1Score
 var player2Score
 var ballZ
+var player1Position = Vector3(0, 0, 0)
+var player2Position = Vector3(0, 0, 0)
 
 func _ready():
 	gameState = 0
