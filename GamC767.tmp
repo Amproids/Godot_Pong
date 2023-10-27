@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpsb7wtj6akik"]
+
+[ext_resource type="PackedScene" uid="uid://bq6m3l21qb5c1" path="res://Scenes/Arena.tscn" id="1_4ibiq"]
+[ext_resource type="PackedScene" uid="uid://dxt5leoljmf7h" path="res://Scenes/Player1.tscn" id="2_47u0j"]
+[ext_resource type="PackedScene" uid="uid://betfrcm382iwq" path="res://Scenes/Ball.tscn" id="2_c7vjn"]
+[ext_resource type="PackedScene" uid="uid://b44nrvmukjldu" path="res://UI/UI_Menu.tscn" id="3_5ol8m"]
+[ext_resource type="PackedScene" uid="uid://d0chamgprg64i" path="res://Scenes/Player2.tscn" id="5_yslgy"]
+[ext_resource type="Script" path="res://Scripts/Player2.gd" id="6_uhi0l"]
+
+[node name="Game_Scene" type="Node3D"]
+
+[node name="Arena" parent="." instance=ExtResource("1_4ibiq")]
+
+[node name="Ball" parent="." instance=ExtResource("2_c7vjn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_mask = 7
+
+[node name="UI_Menu" parent="." instance=ExtResource("3_5ol8m")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 21, 0)
+
+[node name="Player1" parent="." instance=ExtResource("2_47u0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="Player2" parent="." instance=ExtResource("5_yslgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("6_uhi0l")
