@@ -7,7 +7,7 @@
 font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_i83ab"]
-font_size = 20
+font_size = 100
 
 [node name="UI_Menu" type="Node2D"]
 
@@ -29,6 +29,7 @@ color = Color(0.388235, 0.388235, 0.388235, 0.784314)
 
 [node name="Player1_Score" type="Label" parent="."]
 z_index = -2
+offset_top = 30.0
 offset_right = 1000.0
 offset_bottom = 750.0
 label_settings = SubResource("LabelSettings_i83ab")

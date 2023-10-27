@@ -5,6 +5,7 @@ var player2Score
 var player1Position = Vector3(0, 0, 0)
 var player2Position = Vector3(0, 0, 0)
 var worldTime = 0
+var ballZ = 0
 
 func _ready():
 	gameState = 0
