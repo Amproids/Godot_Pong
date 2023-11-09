@@ -14,15 +14,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if GameScene.gameState:
+		GameScene.ballCoords = position
+		GameScene.ballVelocity = velocity
 		if GameScene.serveTimerTime:
 			if lastScored == 2:
-				position = Vector3(-14, 1, GameScene.player1Position[2])
+				position = Vector3(-15, 1, GameScene.player1Position[2])
 				velocity = Vector3(ballSpeed, 0, 0)
 			if lastScored == 1:
-				position = Vector3(14, 1, GameScene.player2Position[2])
+				position = Vector3(15, 1, GameScene.player2Position[2])
 				velocity = Vector3(-ballSpeed, 0, 0)
 		else:
-			GameScene.ballCoords = position
 			var collisionInfo = move_and_collide(velocity * delta)
 			if collisionInfo:
 				#update ball's positional relation to players. (I don't know how to pull this data from collisionInfo)

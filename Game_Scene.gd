@@ -5,6 +5,7 @@ var player2Score
 var player1Position = Vector3(0, 0, 0)
 var player2Position = Vector3(0, 0, 0)
 var ballCoords = Vector3(0, 0, 0)
+var ballVelocity = Vector3(0, 0, 0)
 var serveTimerTime = 0.0
 
 func _ready():
