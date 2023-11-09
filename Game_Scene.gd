@@ -4,8 +4,8 @@ var player1Score
 var player2Score
 var player1Position = Vector3(0, 0, 0)
 var player2Position = Vector3(0, 0, 0)
-var worldTime = 0
-var ballZ = 0
+var ballCoords = Vector3(0, 0, 0)
+var serveTimerTime = 0.0
 
 func _ready():
 	gameState = 0
@@ -18,7 +18,3 @@ func _process(delta):
 			gameState = 0
 		else:
 			gameState = 1
-func _restartGame():
-	gameState = -1
-	player1Score = 0
-	player2Score = 0

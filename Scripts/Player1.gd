@@ -13,3 +13,4 @@ func _physics_process(delta):
 		direction = move_and_slide()
 	elif GameScene.gameState == -1:
 		position.z = 0
+	

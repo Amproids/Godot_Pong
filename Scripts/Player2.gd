@@ -7,9 +7,9 @@ func _physics_process(delta):
 		GameScene.player2Position = position
 		var direction = Vector3.ZERO
 		if AI:
-			if GameScene.ballZ < position[2]:
+			if GameScene.ballCoords[2] < position[2]:
 				direction.z -= 1
-			if GameScene.ballZ > position[2]:
+			if GameScene.ballCoords[2] > position[2]:
 				direction.z += 1
 		if Input.is_action_pressed("player2_move_up"):
 			AI = false
