@@ -37,7 +37,6 @@ func _physics_process(delta):
 				else:
 					AIServing = false
 			else:
-				print(GameScene.ballCoords.x)
 				if GameScene.ballCoords.x > AI_REACTION_RANGE and GameScene.ballVelocity.x > 0:
 					if abs(GameScene.ballCoords[2] - position[2]) > 1.5:
 						startMoving = true
