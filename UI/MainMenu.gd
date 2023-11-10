@@ -5,3 +5,8 @@ func _process(delta):
 		show()
 	else:
 		hide()
+	
+	if Input.is_action_just_pressed("pause_unpause"):
+		if GameScene.gameState == "menu":
+			GameScene.gameState = "playing"
+			$Start.play()

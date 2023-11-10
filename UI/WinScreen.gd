@@ -6,10 +6,12 @@ func _ready():
 func _process(delta):
 	if GameScene.gameState == "playing":
 		if GameScene.player1Score == 5:
+			$Win.play()
 			show()
 			GameScene.gameState = "win"
 			text = "Player 1 Wins!"
 		elif GameScene.player2Score == 5:
+			$Win.play()
 			show()
 			GameScene.gameState = "win"
 			text = "Player 2 Wins!"
@@ -19,3 +21,4 @@ func _process(delta):
 	elif GameScene.gameState == "win":
 		if Input.is_action_just_pressed("pause_unpause"):
 			GameScene.gameState = "playing"
+			$Start.play()

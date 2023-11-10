@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://betfrcm382iwq"]
+[gd_scene load_steps=8 format=3 uid="uid://betfrcm382iwq"]
 
 [ext_resource type="Material" uid="uid://ggexljwy84mh" path="res://Materials/Ball.material" id="1_cbgod"]
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_o0bun"]
+[ext_resource type="AudioStream" uid="uid://15iwqb2wjg8q" path="res://Audio/wall_bounce.wav" id="3_cirnf"]
+[ext_resource type="AudioStream" uid="uid://bd8rtpjf0cbph" path="res://Audio/paddle_bounce.wav" id="4_oftw7"]
+[ext_resource type="AudioStream" uid="uid://bvlai7owt6nfc" path="res://Audio/score.wav" id="5_no2qp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2icol"]
 
@@ -25,3 +28,12 @@ mesh = SubResource("BoxMesh_hreil")
 light_color = Color(0.392157, 1, 1, 1)
 light_energy = 4.0
 omni_range = 50.0
+
+[node name="WallBounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cirnf")
+
+[node name="PaddleBounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_oftw7")
+
+[node name="Score" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_no2qp")

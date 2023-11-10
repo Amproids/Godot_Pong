@@ -11,7 +11,7 @@ var movementLoop = (randi() % 100) + 100
 var currentLoop = 0
 var movementDirection = 1
 var flippingDirection = false
-var AI_REACTION_RANGE = -10 #the smaller, the more difficult the AI. 0 is the midpoint -18 is the hardest
+var AI_REACTION_RANGE = -5 #the smaller, the more difficult the AI. 0 is the midpoint -18 is the hardest
 
 func _physics_process(delta):
 	if GameScene.gameState == "playing":
