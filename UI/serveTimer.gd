@@ -6,7 +6,7 @@ func _process(delta):
 	GameScene.serveTimerTime = time_left
 	if GameScene.player1Score + GameScene.player2Score != last_scoreboard:
 		start()
-	if GameScene.gameState:
+	if GameScene.gameState == "playing":
 		paused = false
 	else:
 		paused = true

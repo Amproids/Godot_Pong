@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://b44nrvmukjldu"]
+
+[ext_resource type="Script" path="res://UI/Paused.gd" id="1_ahsc5"]
+[ext_resource type="Script" path="res://UI/Score.gd" id="2_ve3p7"]
+[ext_resource type="Script" path="res://UI/timerLabel.gd" id="3_pys6h"]
+[ext_resource type="Script" path="res://UI/ServeTimer.gd" id="4_i2jp2"]
+[ext_resource type="Script" path="res://UI/WinScreen.gd" id="5_362ul"]
+[ext_resource type="Script" path="res://UI/MainMenu.gd" id="6_6vodl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gffwj"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_i83ab"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_6aa6t"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_te1xp"]
+font_size = 100
+
+[node name="UI" type="Node2D"]
+
+[node name="Paused" type="Label" parent="."]
+offset_right = 1000.0
+offset_bottom = 750.0
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_gffwj")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ahsc5")
+
+[node name="ColorRect" type="ColorRect" parent="Paused"]
+z_index = -1
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 750.0
+color = Color(0.388235, 0.388235, 0.388235, 0.784314)
+
+[node name="Player1_Score" type="Label" parent="."]
+z_index = -2
+offset_top = 30.0
+offset_right = 1000.0
+offset_bottom = 750.0
+label_settings = SubResource("LabelSettings_i83ab")
+horizontal_alignment = 1
+script = ExtResource("2_ve3p7")
+
+[node name="TimerLabel" type="Label" parent="."]
+z_index = -2
+offset_right = 1000.0
+offset_bottom = 500.0
+label_settings = SubResource("LabelSettings_6aa6t")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_pys6h")
+
+[node name="ServeTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+script = ExtResource("4_i2jp2")
+
+[node name="WinScreen" type="Label" parent="."]
+offset_right = 1000.0
+offset_bottom = 750.0
+label_settings = SubResource("LabelSettings_te1xp")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_362ul")
+
+[node name="ColorRect" type="ColorRect" parent="WinScreen"]
+z_index = -1
+offset_right = 1000.0
+offset_bottom = 750.0
+color = Color(0.388235, 0.388235, 0.388235, 0.784314)
+
+[node name="Title" type="Label" parent="."]
+offset_right = 1000.0
+offset_bottom = 500.0
+text = "PING"
+script = ExtResource("6_6vodl")
+
+[node name="ColorRect" type="ColorRect" parent="Title"]
+z_index = -1
+layout_mode = 2
+offset_right = 1000.0
+offset_bottom = 750.0
+color = Color(0.145098, 0.145098, 0.145098, 1)

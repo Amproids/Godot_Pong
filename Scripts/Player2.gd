@@ -14,7 +14,7 @@ var flippingDirection = false
 var AI_REACTION_RANGE = -10 #the smaller, the more difficult the AI. 0 is the midpoint -18 is the hardest
 
 func _physics_process(delta):
-	if GameScene.gameState:
+	if GameScene.gameState == "playing":
 		GameScene.player2Position = position
 		var direction = Vector3.ZERO
 		if AI:
@@ -61,5 +61,5 @@ func _physics_process(delta):
 			direction.z += 1
 		velocity.z = direction.z * SPEED
 		direction = move_and_slide()
-	elif GameScene.gameState == -1:
+	elif GameScene.gameState == "win":
 		position.z = 0

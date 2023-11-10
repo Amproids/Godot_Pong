@@ -13,10 +13,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if GameScene.gameState:
+	if GameScene.gameState == "playing":
 		GameScene.ballCoords = position
 		GameScene.ballVelocity = velocity
 		if GameScene.serveTimerTime:
+			ballSpeed = ballSpeedStart
 			if lastScored == 2:
 				position = Vector3(-15, 1, GameScene.player1Position[2])
 				velocity = Vector3(ballSpeed, 0, 0)
@@ -52,6 +53,6 @@ func _process(delta):
 					GameScene.player1Score += 1
 					ballSpeed = ballSpeedStart
 					lastScored = 1
-	elif GameScene.gameState == -1:
-		position = Vector3(0, 1, 0)
+	elif GameScene.gameState == "win":
+		lastScored = 2
 		ballSpeed = ballSpeedStart
